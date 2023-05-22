@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">
+    <i class="fas fa-shopping-cart"></i> Commandes
+  </h1>
+
+  <button class="btn btn-primary" (click)="ajout()">
+    <i class="fas fa-plus"></i> Ajouter une commande
+  </button>
+
+  <table class="table table-bordered table-striped bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>id commande</th>
+        <th>Date du commande</th>
+        <th>client</th>
+        <th>prix total</th>
+        <th>Bon de Livraison</th>
+        <th>Etat Livraison</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let comm of commandes">
+        <td>{{comm.idc}}</td>
+        <td>{{comm.DateCommande}}</td>
+        <td>{{comm.userId}}</td>
+        <td>{{comm.prixTotale}}</td>
+        <td>
+          <button class="btn btn-outline-primary">
+            <i class="fas fa-file-alt"></i> Bon De Livraison
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-outline-success">
+            <i class="fas fa-truck"></i> Etat Livraison
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

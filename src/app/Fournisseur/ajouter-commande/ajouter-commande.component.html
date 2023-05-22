@@ -1,0 +1,67 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <h1 class="text-center mb-4">
+      <i class="fas fa-shopping-cart"></i> Ajouter Une Commande
+    </h1>
+    <form name="editForm" role="form" (ngSubmit)="ajouterCommande()">
+      <div class="row mb-3">
+        <label class="form-label"> Code De Commande </label>
+        <input
+          type="number"
+          class="form-control"
+          id="code"
+          name="code"
+          required
+        />
+      </div>
+      <div class="row mb-3">
+        <label class="form-label">Date de Commande </label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          name="date"
+          required
+        />
+      </div>
+      <div class="row mb-3">
+        <label class="form-label">Etat De Commande </label>
+        <select class="form-control" id="etat" name="etat" required>
+          <option [value]="true">en cours</option>
+          <option [value]="false">Validée</option>
+        </select>
+      </div>
+
+      <div class="row mb-3">
+        <label class="form-label">Client</label>
+        <input
+          type="text"
+          class="form-control"
+          id="client"
+          name="client"
+          required
+        />
+      </div>
+
+      <div class="row mb-3">
+        <button
+          type="button"
+          id="cancel-save"
+          data-cy="entityCreateCancelButton"
+          class="btn btn-secondary"
+          (click)="previousState()"
+        >
+          <span>Cancel</span>
+        </button>
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          class="btn btn-primary"
+        >
+          <span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

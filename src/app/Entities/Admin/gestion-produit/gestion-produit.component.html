@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">
+    <i class="fas fa-shopping-cart"></i> Listes des produits
+  </h1>
+  <button class="btn btn-primary" (click)="ajout()">
+    <i class="fas fa-plus"></i> Ajouter un produit
+  </button>
+  <table class="table table-bordered table-striped bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Id produit</th>
+        <th>Nom du produit</th>
+        <th>Description </th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let prod of produits">
+        <td>{{prod.id}}</td>
+        <td>{{prod.nomP}}</td>
+        <td>{{prod.description}}</td>
+        <td>{{prod.prix}}</td>
+        <td>
+          <button class="btn btn-outline-primary" (click)="updateProduit()">
+            <i class="fas fa-edit"></i> Modifier
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-outline-success" (click)="deleteProduit()">
+            <i class="fas fa-ban"></i> Supprimer
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,21 @@
+<h2 style="text-align: center; color: blue;">Les clients</h2>
+<table class="table table-bordered " style="border: 1px solid black;">
+<tr>
+  <th >ID</th>
+  <th >Adresse</th>
+  <th >Nom</th>
+  <th >Prénom </th>
+  <th>Phone</th>
+  <th>Action</th>
+</tr>
+
+  <tr *ngFor="let c of clients">
+  <td>{{c.Id}}</td>
+  <td>{{c.adresse}}</td>
+  <td>{{c.nom }}</td>
+   <td>{{c.prenom}}</td>
+   <td>{{c.phone}}</td>
+  <td> <button class="btn btn-outline-danger" (clic)="deleteResource(c.Id)">Supprimer</button>
+  </tr>
+</table>
+
